@@ -3,5 +3,5 @@ A simple web service that listens for organization events to know when a reposit
 
 
 References
--https://dotnetthoughts.net/webhooks-in-aspnet-core/
+https://github.com/aspnet/WebHooks/tree/master/samples/GitHubCoreReceiver
 -https://docs.microsoft.com/en-us/aspnet/webhooks/receiving/receivers
