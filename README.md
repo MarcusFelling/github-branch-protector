@@ -1,6 +1,10 @@
 # new-repo-branch-protection
 A simple web service that listens for organization events to know when a repository has been created. When a repo is created, this automates the protection of the master branch. A notification with an @mention in an issue within the repository outlines the protections that were added.
 
+TODO
+Setup GitHub Webhook
+App settings
+Example issue: https://github.com/MarcusFellingOrganization/test/issues/2
 
 References
 https://github.com/aspnet/WebHooks/tree/master/samples/GitHubCoreReceiver
