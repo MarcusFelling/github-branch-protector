@@ -3,7 +3,7 @@
 github-branch-protector is a simple Azure Function (PowerShell Core) that listens for GitHub organization events to know when a repository has been created. When a repo is created, the function automates the protection of the master branch. A notification with an @mention in an issue within the repository outlines the protections that were added.
 
 ## Build Status
-![CI](https://github.com/MarcusFellingOrganization/github-branch-protector/workflows/github-branch-protector/badge.svg)
+![CI](https://github.com/MarcusFellingOrganization/github-branch-protector/workflows/github-branch-protector/badge.svg) - This is a GitHub action to build and deploy to Azure.
 
 ## How it works
 A function's project directory contains the files [host.json](https://docs.microsoft.com/en-us/azure/azure-functions/functions-host-json) and [local.settings.json](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#local-settings-file), along with subfolders that contain the code for individual functions. In this project we have 1 function called GitHubEvent trigger. It contains [function.json](https://github.com/MarcusFellingOrganization/github-branch-protector/blob/master/GitHubEventTrigger/function.json) that holds the configuration metadata for the function, and a single script file [run.ps1](https://github.com/MarcusFellingOrganization/github-branch-protector/blob/master/GitHubEventTrigger/run.ps1) that contains the function code.
