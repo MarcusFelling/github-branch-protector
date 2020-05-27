@@ -1,4 +1,4 @@
-name: CI
+name: github-branch-protector
 
 # trigger action on pushes to master
 on:
