@@ -39,8 +39,8 @@ jobs:
       uses: Azure/functions-action@v1.1.4
       with:
         # Name of the Azure Function App, value set as repo secret
-        app-name: ${{ env.APP_NAME }}
+        app-name: ${{ secrets.APP_NAME }}
         # Path to package or folder. *.zip or a folder to deploy
         package: drop.zip
         # Publish profile (*.publishsettings) file contents with web deploy secrets, contents set as repo secret
-        publish-profile: ${{ env.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
