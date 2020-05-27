@@ -14,9 +14,9 @@ jobs:
       with:
         node-version: '12'
     - run: npm install azure-functions-core-tools@3
-    - run: ls ${{ github.workspace }}
+    - run: ls ${{ github.workspace }}/node_modules/azure-functions-core-tools/bin
     # Build function project
     # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
     - name: Build function
       run: func start --build --powershell
-      working-directory: /node_modules/azure-functions-core-tools/bin
+      working-directory: ${{ github.workspace }}/node_modules/azure-functions-core-tools/bin
