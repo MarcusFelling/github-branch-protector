@@ -13,9 +13,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12'
-    - run: npm install azure-functions-core-tools@3
-      working-directory:  ${{ github.workspace }}/github-branch-protector
     - run: ls ${{ github.workspace }}
+    - run: npm install azure-functions-core-tools@3
+      working-directory:  github-branch-protector
+
   
     # Build function project
     # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
