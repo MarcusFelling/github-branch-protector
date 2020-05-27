@@ -18,5 +18,5 @@ jobs:
     # Build function project
     # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
     - name: Build function
-      run: func start --build --powershell
+      run: func.exe start --build --powershell
       working-directory: ${{ github.workspace }}/node_modules/azure-functions-core-tools/bin
