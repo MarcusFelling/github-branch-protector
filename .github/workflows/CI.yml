@@ -1,0 +1,15 @@
+name: CI
+
+# trigger action on all push events
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    # Build function project
+    # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
+    - name: Build function
+      run: func start --build --powershell
