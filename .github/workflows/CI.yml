@@ -4,24 +4,21 @@ name: CI
 on: push
 
 jobs:
-  install:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      
+    # Checkout repo code, available at $GITHUB_WORKSPACE
+    - uses: actions/checkout@v2       
       # Install azure function core tools
     - uses: actions/setup-node@v1
       with:
         node-version: '12'
     - run: npm install azure-functions-core-tools@3
-    
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps: 
-    - uses: actions/checkout@v2    
-    
+      working-directory:  $GITHUB_WORKSPACE
+  
     # Build function project
     # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
     - name: Build function
-      run: func start --build --powershell  
+      run: func start --build --powershell
+      env: 
+        func: $GITHUB_WORKSPACE/node_modules/azure-functions-core-tools/bin
