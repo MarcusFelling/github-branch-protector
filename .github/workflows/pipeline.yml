@@ -16,7 +16,7 @@ jobs:
       with:
         # Filename for archive
         filename: drop.zip
-        exclusions: '*.git* /*node_modules/* *.vs*'
+        exclusions: '*.git* /*node_modules/* *.vs* /*docs*/*'
       # Publish zip as build artifact
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2
