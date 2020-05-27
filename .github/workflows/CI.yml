@@ -13,5 +13,12 @@ jobs:
       uses: TheDoctor0/zip-release@v0.3.0
       with:
         # Filename for archive
-        filename: release.zip
+        filename: drop.zip
         exclusions: '*.git* /*node_modules/* *.vs*'
+      # Publish zip as build artifact
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        # Artifact name
+        name: drop
+        path: drop.zip
