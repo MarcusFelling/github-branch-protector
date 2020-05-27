@@ -4,7 +4,7 @@ name: CI
 on: push
 
 jobs:
-  build:
+  install:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,7 +14,13 @@ jobs:
       with:
         node-version: '12'
     - run: npm install azure-functions-core-tools@3
-      
+    
+  build:
+    needs: install
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2    
+    
     # Build function project
     # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
     - name: Build function
