@@ -26,8 +26,8 @@ For an example of the issue that is created, see here: https://github.com/Marcus
 6. Create a new repository to test
 
 ## TO DO
-- Add handling for repos with no master branch
-- Prettify issue description by adding markdown to protection response
-- Refactor by breaking into functions
+- [Add handling for repos with no master branch](https://github.com/MarcusFellingOrganization/github-branch-protector/issues/2)
+- [Prettify issue description by adding markdown to protection response](https://github.com/MarcusFellingOrganization/github-branch-protector/issues/3)
+- [Refactor by breaking into functions](https://github.com/MarcusFellingOrganization/github-branch-protector/issues/4)
 
 
