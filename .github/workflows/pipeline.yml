@@ -1,0 +1,48 @@
+name: CI
+
+# trigger action on pushes to master
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Checkout repo code, available at $GITHUB_WORKSPACE
+    - uses: actions/checkout@v2
+    - name: Zip Release
+      uses: TheDoctor0/zip-release@v0.3.0
+      with:
+        # Filename for archive
+        filename: drop.zip
+        exclusions: '*.git* /*node_modules/* *.vs*'
+      # Publish zip as build artifact
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        # Artifact name
+        name: drop
+        path: drop.zip
+  
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v2
+      with:
+        # Artifact name
+        name: drop
+        # Destination path
+        path: ${{ github.workspace }}
+    
+    - name: Azure Functions Action
+      uses: Azure/functions-action@v1.1.4
+      with:
+        # Name of the Azure Function App, value set as repo secret
+        app-name: ${{ secrets.APP_NAME }}
+        # Path to package or folder. *.zip or a folder to deploy
+        package: drop.zip
+        # Publish profile (*.publishsettings) file contents with web deploy secrets, contents set as repo secret
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
