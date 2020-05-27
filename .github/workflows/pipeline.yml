@@ -1,7 +1,9 @@
 name: CI
 
-# trigger action on all push events
-on: push
+# trigger action on pushes to master
+on:
+  push:
+    branches: master
 
 jobs:
   build:
