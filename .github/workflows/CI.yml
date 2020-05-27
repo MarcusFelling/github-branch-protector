@@ -8,11 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    # Install azure-functions-core-tools@3
-    - name: Install Azure Function Core Tools v3
-      run: npm install azure-functions-core-tools@3
-     
+      
+      # Install azure function core tools
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    - run: npm install azure-functions-core-tools@3
+      
     # Build function project
     # https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#start
     - name: Build function
-      run: func start --build --powershell
+      run: func start --build --powershell  
