@@ -25,9 +25,7 @@ For an example of the issue that is created, see here: https://github.com/Marcus
 5. [Create a GitHub webwook](https://developer.github.com/webhooks/creating/) in the organization you'd like to protect. When creating the webhook scope it to repository events only. The payload url should be configured to point to the Azure Function trigger url that will look like: https://NAMEOFFUNCTION.azurewebsites.net/api/NAMEOFTRIGGER?code=*******
 6. Create a new repository to test
 
-## TO DO
-- [Add handling for repos with no master branch](https://github.com/MarcusFellingOrganization/github-branch-protector/issues/2)
-- [Prettify issue description by adding markdown to protection response](https://github.com/MarcusFellingOrganization/github-branch-protector/issues/3)
-- [Refactor by breaking into functions](https://github.com/MarcusFellingOrganization/github-branch-protector/issues/4)
+## To Do
+- [See issues](https://github.com/MarcusFelling/github-branch-protector/issues/)
 
 
