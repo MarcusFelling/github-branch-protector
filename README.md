@@ -12,8 +12,6 @@ The function is triggered by an HTTP request from a GitHub webhook. When the fun
 
 ![AzureFunctionDiagram.PNG](/docs/images/AzureFunctionDiagram.PNG)
 
-For an example of the issue that is created, see here: https://github.com/MarcusFellingOrganization/test/issues/2
-
 ## How to get started
 1. Clone repo to Visual Studio Code workspace 
 2. [Sign in to Azure using Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-powershell#sign-in-to-azure)
